@@ -15,3 +15,14 @@ cp \
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
+###############################################################################
+# Append shell config.
+###############################################################################
+echo '# Configurations from rc/install.sh:' | tee -a ~/.bashrc
+
+# tmux -2 forces tmux to use screen-256color, so e.g. highlighting works.
+echo alias tmux=\'tmux -2\' | tee -a ~/.bashrc
+
+echo !!!RC Installation Completed!!!
+echo !!!Restart or \'source\' Shell!!!
+
