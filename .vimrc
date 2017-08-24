@@ -29,7 +29,7 @@ filetype plugin indent on    " required
 " ### Global Settings
 " #############################################################################
 
-:color elflord
+color elflord
 set autoindent
 
 " #############################################################################
@@ -54,4 +54,15 @@ au BufNewFile,BufRead *.py
 if executable('xmllint')
 	au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
 endif
+
+" #############################################################################
+" ### Coverage Settings
+" #############################################################################
+
+highlight line_not_covered guifg=red ctermfg=red
+highlight line_covered guifg=green ctermfg=green
+
+au BufRead,BufWrite *.cov
+    \ syntax match line_not_covered /^[^+].*/ |
+    \ syntax match line_covered /^+.*/
 
