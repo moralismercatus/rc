@@ -31,6 +31,8 @@ filetype plugin indent on    " required
 
 color elflord
 set autoindent
+" Open file at last location.
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
 " #############################################################################
 " ### Python Settings
