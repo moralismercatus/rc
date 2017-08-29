@@ -18,6 +18,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'othree/xml.vim'
+Plugin 'scrooloose/nerdtree'
 "Plugin 'Valloric/YouCompleteMe' ... requires a newer version of vim.
 
 
@@ -68,3 +69,10 @@ au BufRead,BufWrite *.cov
     \ syntax match line_not_covered /^[^+].*/ |
     \ syntax match line_covered /^+.*/
 
+" #############################################################################
+" ### NERDTree Settings
+" #############################################################################
+
+map <C-n> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
