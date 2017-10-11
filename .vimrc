@@ -19,6 +19,7 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'othree/xml.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'Valloric/YouCompleteMe' ... requires a newer version of vim.
 
 
