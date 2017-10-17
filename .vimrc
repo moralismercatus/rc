@@ -20,6 +20,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'othree/xml.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tmux-plugins/vim-tmux' " .tmux.conf syntax highlighting, etc.
 "Plugin 'Valloric/YouCompleteMe' ... requires a newer version of vim.
 
 
