@@ -16,10 +16,11 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
 ###############################################################################
-# Install Vundle vim plugin system and install plugins.
+# Install tmux plugin system and install plugins.
 ###############################################################################
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source ~/.tmux.conf
+~/.tmux/plugins/tpm/bin/install_plugins
 
 ###############################################################################
 # Append shell config.
