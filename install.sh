@@ -22,6 +22,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source ~/.tmux.conf
 ~/.tmux/plugins/tpm/bin/install_plugins
 ~/.tmux/plugins/tpm/bin/update_plugins all
+# Note: if plugins still unresponsive: _ctrl+a, I_ to install plugins manually.
 
 ###############################################################################
 # Append shell config.

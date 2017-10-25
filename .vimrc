@@ -34,6 +34,8 @@ filetype plugin indent on    " required
 
 color elflord
 set autoindent
+set wildmode=longest,list,full
+set wildmenu
 " Open file at last location.
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
@@ -42,6 +44,12 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'
 " #############################################################################
 
 command ReverseLines :g/^/m0
+command SelectInnerWord :execute 'normal "aviw'
+command SelectLine :execute 'normal "a0v$'
+command CopyInnerWord :execute 'normal "ayiw' | echo "Copied:" @a
+command CopyLine :execute 'normal "ayy' | echo "Copied:" @a
+command PasteInnerWord :execute 'normal "aviwp' | echo "Pasted:" @a
+command PasteOverLine :execute 'normal "a0v$p' | echo "Pasted:" @a
 
 " #############################################################################
 " ### Python Settings
