@@ -50,6 +50,7 @@ command CopyInnerWord :execute 'normal "ayiw' | echo "Copied:" @a
 command CopyLine :execute 'normal "ayy' | echo "Copied:" @a
 command PasteInnerWord :execute 'normal "aviwp' | echo "Pasted:" @a
 command PasteOverLine :execute 'normal "a0v$p' | echo "Pasted:" @a
+command HelpReplaceWholeWords :echo "Help: %s/\\<oldword\\>/newword/g" 
 
 " #############################################################################
 " ### Python Settings
