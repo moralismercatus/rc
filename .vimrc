@@ -21,6 +21,7 @@ Plugin 'othree/xml.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tmux-plugins/vim-tmux' " .tmux.conf syntax highlighting, etc.
+Plugin 'MattesGroeger/vim-bookmarks'
 "Plugin 'Valloric/YouCompleteMe' ... requires a newer version of vim.
 
 
@@ -50,7 +51,9 @@ command CopyInnerWord :execute 'normal "ayiw' | echo "Copied:" @a
 command CopyLine :execute 'normal "ayy' | echo "Copied:" @a
 command PasteInnerWord :execute 'normal "aviwp' | echo "Pasted:" @a
 command PasteOverLine :execute 'normal "a0v$p' | echo "Pasted:" @a
-command HelpReplaceWholeWords :echo "Help: %s/\\<oldword\\>/newword/g" 
+" Help Commands
+command HelpReplaceWholeWords :echo "Help: %s/\\<old\\>/new/g" 
+command HelpSubstitute :echo "Help: TODO" 
 
 " #############################################################################
 " ### Python Settings
