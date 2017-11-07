@@ -22,6 +22,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tmux-plugins/vim-tmux' " .tmux.conf syntax highlighting, etc.
 Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'tpope/vim-fugitive'
 "Plugin 'Valloric/YouCompleteMe' ... requires a newer version of vim.
 
 
@@ -68,6 +69,22 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix |
     \ set encoding=utf-8
+
+" #############################################################################
+" ### C++ Settings
+" #############################################################################
+
+au BufNewFile,BufRead *.c,*.h,*.cpp,*.cxx,*.hpp,*.hxx
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab | 
+    \ set autoindent |
+    \ set fileformat=unix |
+    \ set encoding=utf-8 |
+    \ set colorcolumn=80 |
+    \ highlight ColorColumn ctermbg=darkgrey
 
 
 " #############################################################################
