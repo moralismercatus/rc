@@ -23,6 +23,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tmux-plugins/vim-tmux' " .tmux.conf syntax highlighting, etc.
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
+Plugin 'Townk/vim-autoclose'
 "Plugin 'Valloric/YouCompleteMe' ... requires a newer version of vim.
 
 
@@ -55,6 +57,7 @@ command PasteOverLine :execute 'normal "a0v$p' | echo "Pasted:" @a
 " Help Commands
 command HelpReplaceWholeWords :echo "Help: %s/\\<old\\>/new/g" 
 command HelpSubstitute :echo "Help: TODO" 
+command HelpDeleteAllLinesMatching :echo "Help: g/pattern/d" 
 
 " #############################################################################
 " ### Python Settings
@@ -113,3 +116,10 @@ au BufRead,BufWrite *.cov
 map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" #############################################################################
+" ### Airline Settings
+" #############################################################################
+
+let g:airline#extensions#tabline#enabled = 1 " Display buffers at tabline when only single tab.
+let g:airline#extensions#tabline#fnamemod = ':t' " Just display the filename
