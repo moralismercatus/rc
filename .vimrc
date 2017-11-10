@@ -25,8 +25,8 @@ Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Townk/vim-autoclose'
+Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'Valloric/YouCompleteMe' ... requires a newer version of vim.
-
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
