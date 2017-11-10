@@ -123,3 +123,18 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 let g:airline#extensions#tabline#enabled = 1 " Display buffers at tabline when only single tab.
 let g:airline#extensions#tabline#fnamemod = ':t' " Just display the filename
+
+" #############################################################################
+" ### The Silver Searcher
+" #############################################################################
+
+if executable('ag')
+    " Use ag instead of grep
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    command -nargs=+ -complete=file -bar Ag silent! grep!<args>|cwindow|redraw!
+    " bind \ to ag
+    nnoremap \ :Ag<SPACE>
+else
+    echo "Warning: ag not found; ag functionality disabled."
+endif
