@@ -26,6 +26,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Townk/vim-autoclose'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mbbill/undotree'
 "Plugin 'Valloric/YouCompleteMe' ... requires a newer version of vim.
 
 " All of your Plugins must be added before the following line
@@ -125,7 +126,7 @@ let g:airline#extensions#tabline#enabled = 1 " Display buffers at tabline when o
 let g:airline#extensions#tabline#fnamemod = ':t' " Just display the filename
 
 " #############################################################################
-" ### The Silver Searcher
+" ### The Silver Searcher (ag)
 " #############################################################################
 
 if executable('ag')
@@ -137,4 +138,19 @@ if executable('ag')
     nnoremap \ :Ag<SPACE>
 else
     echo "Warning: ag not found; ag functionality disabled."
+endif
+
+" #############################################################################
+" ### CtrlP Settings
+" #############################################################################
+
+let g:ctrlp_cmd = 'CtrlPMixed'
+
+" #############################################################################
+" ### Undotree Settings
+" #############################################################################
+
+if has("persistent_undo")
+	set undodir=~/.vim.undodir/
+	set undofile
 endif
