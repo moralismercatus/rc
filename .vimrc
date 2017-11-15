@@ -27,6 +27,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'Townk/vim-autoclose'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mbbill/undotree'
+Plugin 'majutsushi/tagbar'
+Plugin 'fidian/hexmode'
 "Plugin 'Valloric/YouCompleteMe' ... requires a newer version of vim.
 
 " All of your Plugins must be added before the following line
