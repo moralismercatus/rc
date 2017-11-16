@@ -30,6 +30,8 @@ Plugin 'mbbill/undotree'
 Plugin 'majutsushi/tagbar'
 Plugin 'fidian/hexmode'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'morhetz/gruvbox'
+Plugin 'nathanaelkane/vim-indent-guides'
 "Plugin 'Valloric/YouCompleteMe' ... requires a newer version of vim.
 
 " All of your Plugins must be added before the following line
@@ -40,7 +42,8 @@ filetype plugin indent on    " required
 " ### Global Settings
 " #############################################################################
 
-color elflord
+colorscheme gruvbox
+set background=dark
 set autoindent
 set wildmode=longest,list,full
 set wildmenu
@@ -165,7 +168,10 @@ endif
 let g:tagbar_left = 1
 
 " #############################################################################
-" ### Gutentags Settings
+" ### vim-indent-guides Settings
 " #############################################################################
 
-set statusline+=%{gutentags#statusline()}
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
