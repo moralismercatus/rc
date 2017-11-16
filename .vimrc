@@ -29,6 +29,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mbbill/undotree'
 Plugin 'majutsushi/tagbar'
 Plugin 'fidian/hexmode'
+Plugin 'ludovicchabant/vim-gutentags'
 "Plugin 'Valloric/YouCompleteMe' ... requires a newer version of vim.
 
 " All of your Plugins must be added before the following line
@@ -156,3 +157,15 @@ if has("persistent_undo")
 	set undodir=~/.vim.undodir/
 	set undofile
 endif
+
+" #############################################################################
+" ### Tagbar Settings
+" #############################################################################
+
+let g:tagbar_left = 1
+
+" #############################################################################
+" ### Gutentags Settings
+" #############################################################################
+
+set statusline+=%{gutentags#statusline()}
