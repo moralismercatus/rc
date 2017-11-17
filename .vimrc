@@ -102,7 +102,7 @@ au BufNewFile,BufRead *.c,*.h,*.cpp,*.cxx,*.hpp,*.hxx
 " #############################################################################
 
 if executable('xmllint')
-	au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
+    au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
 endif
 
 " #############################################################################
@@ -157,9 +157,9 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 " #############################################################################
 
 if has("persistent_undo")
-	call system('mkdir ~/.vim.undodir')
-	set undodir=~/.vim.undodir/
-	set undofile
+    call system('mkdir ~/.vim.undodir')
+    set undodir=~/.vim.undodir/
+    set undofile
 endif
 
 " #############################################################################
@@ -170,10 +170,17 @@ let g:tagbar_left = 1
 autocmd VimEnter * nested :call tagbar#autoopen(1)
 
 " #############################################################################
-" ### vim-indent-guides Settings
+" ### Indent Guide Settings
 " #############################################################################
 
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size = 1
 
+" #############################################################################
+" ### Bookmark Settings
+" #############################################################################
+
+" I like CtrlP's UI, but it doesn't seem suited to Bookmarks.
+let g:bookmark_disable_ctrlp = 1
+let g:bookmark_auto_close = 1
