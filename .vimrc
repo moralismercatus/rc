@@ -167,7 +167,11 @@ endif
 " #############################################################################
 
 let g:tagbar_left = 1
-autocmd VimEnter * nested :call tagbar#autoopen(1)
+" Autocmds will mess up vimdiff, so only set when not diffing.
+if !&diff 
+    autocmd VimEnter * nested :call tagbar#autoopen(1)
+    autocmd FileType * nested :call tagbar#autoopen(0)
+endif
 
 " #############################################################################
 " ### Indent Guide Settings
