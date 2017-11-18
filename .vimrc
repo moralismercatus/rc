@@ -49,6 +49,8 @@ set wildmode=longest,list,full
 set wildmenu
 " Open file at last location.
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+" Cause go-to tag list all available if more than one found.
+nnoremap <C-]> g<C-]>
 
 " #############################################################################
 " ### Custom Commands
