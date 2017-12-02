@@ -8,6 +8,8 @@ cp \
 	.vimrc \
 	.tmux.conf \
 	~/
+mkdir ~/.config/nvim
+ln -s ~/.vimrc ~/.config/nvim/init.vim
 
 ###############################################################################
 # Install Vundle vim plugin system and install plugins.

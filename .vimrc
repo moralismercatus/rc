@@ -42,6 +42,9 @@ filetype plugin indent on    " required
 " ### Global Settings
 " #############################################################################
 
+" Force vim to use 256 colors, if available in term. Must precede colorscheme.
+" May require additional settings inside of e.g., tmux. e.g., `tmux -2`.
+set t_Co=256
 colorscheme gruvbox
 set background=dark
 set autoindent
@@ -51,6 +54,13 @@ set wildmenu
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 " Cause go-to tag list all available if more than one found.
 nnoremap <C-]> g<C-]>
+" Switch buffers without saving.
+set hidden
+" Automatically use case-sensitive search if a capital is used.
+" Note that \C must be included somewhere in the search expression now when
+" case senitivity is needed. 
+set ignorecase
+set smartcase
 
 " #############################################################################
 " ### Custom Commands
@@ -144,6 +154,8 @@ if executable('ag')
     command -nargs=+ -complete=file -bar Ag silent! grep!<args>|cwindow|redraw!
     " bind \ to ag
     nnoremap \ :Ag<SPACE>
+    " Display all TODOs by textual search.
+    command TodoShow :Ag TODO
 else
     echo "Warning: ag not found; ag functionality disabled."
 endif
