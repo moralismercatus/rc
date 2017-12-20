@@ -32,6 +32,8 @@ Plugin 'fidian/hexmode'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'morhetz/gruvbox'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'neomake/neomake'
+Plugin 'jeetsukumaran/vim-buffergator'
 "Plugin 'Valloric/YouCompleteMe' ... requires a newer version of vim.
 
 " All of your Plugins must be added before the following line
@@ -61,6 +63,8 @@ set hidden
 " case senitivity is needed. 
 set ignorecase
 set smartcase
+" Turn off line-wrapping by default. Re-enable with :set wrap
+set nowrap
 
 " #############################################################################
 " ### Custom Commands
@@ -152,8 +156,10 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
 
     command -nargs=+ -complete=file -bar Ag silent! grep!<args>|cwindow|redraw!
-    " bind \ to ag
+    " Bind \ to ag
     nnoremap \ :Ag<SPACE>
+    " Bind \\ to use ag to search for the word under cursor.
+    nnoremap \\ :Ag <C-R><C-W><ENTER>
     " Display all TODOs by textual search.
     command TodoShow :Ag TODO
 else
@@ -185,7 +191,12 @@ let g:tagbar_left = 1
 if !&diff 
     autocmd VimEnter * nested :call tagbar#autoopen(1)
     autocmd FileType * nested :call tagbar#autoopen(0)
+    " Open TagBar only when a valid file or TagBar itself.
+    " Otherwise, close it.
+    " autocmd BufEnter * nested :if tagbar#isvalid(b)... then... :TagbarOpen...
+    " else :TagbarClose
 endif
+
 
 " #############################################################################
 " ### Indent Guide Settings
@@ -202,3 +213,11 @@ let g:indent_guides_guide_size = 1
 " I like CtrlP's UI, but it doesn't seem suited to Bookmarks.
 let g:bookmark_disable_ctrlp = 1
 let g:bookmark_auto_close = 1
+
+" #############################################################################
+" ### Neomake Settings
+" #############################################################################
+
+" Open quickfix window with output messages. 1 focuses the quickfix.
+let g:neomake_open_list = 1
+let g:neomake_verbose = 1
