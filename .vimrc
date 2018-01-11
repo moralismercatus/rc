@@ -26,7 +26,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Townk/vim-autoclose'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'mbbill/undotree'
+Plugin 'simnalamburt/vim-mundo.git'
 Plugin 'majutsushi/tagbar'
 Plugin 'fidian/hexmode'
 Plugin 'ludovicchabant/vim-gutentags'
@@ -35,6 +35,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'neomake/neomake'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'mtth/scratch.vim'
 "Plugin 'Valloric/YouCompleteMe' ... requires a newer version of vim.
 
 " All of your Plugins must be added before the following line
@@ -174,7 +175,7 @@ endif
 let g:ctrlp_cmd = 'CtrlPMixed'
 
 " #############################################################################
-" ### Undotree Settings
+" ### Undo tree Settings
 " #############################################################################
 
 if has("persistent_undo")
