@@ -34,6 +34,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'neomake/neomake'
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'junegunn/vim-easy-align'
 "Plugin 'Valloric/YouCompleteMe' ... requires a newer version of vim.
 
 " All of your Plugins must be added before the following line
