@@ -1,6 +1,13 @@
 #!/bin/sh
 
 ###############################################################################
+# Install dependencies
+###############################################################################
+sudo apt-get install \
+	git \
+	silversearcher-ag
+
+###############################################################################
 # Copy config files to proper locations.
 ###############################################################################
 cp \
@@ -8,8 +15,6 @@ cp \
 	.vimrc \
 	.tmux.conf \
 	~/
-mkdir ~/.config/nvim
-ln -s ~/.vimrc ~/.config/nvim/init.vim
 
 ###############################################################################
 # Install Vundle vim plugin system and install plugins.
@@ -36,4 +41,10 @@ echo alias tmux=\'tmux -2\' | tee -a ~/.bashrc
 
 echo !!!RC Installation Completed!!!
 echo !!!Restart or \'source\' Shell!!!
+
+###############################################################################
+# Set up Neovim config.
+###############################################################################
+mkdir ~/.config/nvim
+ln -s ~/.vimrc ~/.config/nvim/init.vim
 
