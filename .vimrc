@@ -36,6 +36,7 @@ Plugin 'neomake/neomake'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'mtth/scratch.vim'
+Plugin 'will133/vim-dirdiff'
 "Plugin 'Valloric/YouCompleteMe' ... requires a newer version of vim.
 
 " All of your Plugins must be added before the following line
@@ -138,7 +139,7 @@ au BufRead,BufWrite *.cov
 " ### NERDTree Settings
 " #############################################################################
 
-map <C-n> :NERDTreeToggle<CR>
+map \n :NERDTreeFocus<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
@@ -215,6 +216,10 @@ let g:indent_guides_guide_size = 1
 " I like CtrlP's UI, but it doesn't seem suited to Bookmarks.
 let g:bookmark_disable_ctrlp = 1
 let g:bookmark_auto_close = 1
+" Creates a local bookmark file for pwd, instead of global bookmarking.
+let g:bookmark_save_per_working_dir = 1
+" Since using local pwd bookmarks, load bookmark each time buffer changes.
+let g:bookmark_manage_per_buffer = 1
 
 " #############################################################################
 " ### Neomake Settings
@@ -223,3 +228,6 @@ let g:bookmark_auto_close = 1
 " Open quickfix window with output messages. 1 focuses the quickfix.
 let g:neomake_open_list = 1
 let g:neomake_verbose = 1
+let g:airline#extensions#neomake#enabled = 1
+command Make Neomake!
+

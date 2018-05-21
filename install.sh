@@ -45,6 +45,6 @@ echo !!!Restart or \'source\' Shell!!!
 ###############################################################################
 # Set up Neovim config.
 ###############################################################################
-mkdir ~/.config/nvim
+mkdir -p ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
 
