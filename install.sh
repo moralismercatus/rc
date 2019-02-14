@@ -21,6 +21,7 @@ cp \
 ###############################################################################
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
+vim +PluginUpdate +qall
 
 ###############################################################################
 # Install tmux plugin system and install plugins.
